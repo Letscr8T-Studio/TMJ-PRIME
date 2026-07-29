@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   business: {
     name: "TMJprime",
     slogan: "Quality You Can Trust",
-    description:
+    shortDescription:
       "UK-based supplier of hygiene and toiletry products for care homes, hotels, and commercial clients.",
   },
   contact: {
@@ -16,7 +16,8 @@ export const siteConfig: SiteConfig = {
     phones: ["+44 7769 375625", "+44 7769 375623"],
     country: "United Kingdom",
   },
-  navLinks: [
+  accreditations: [],
+  nav: [
     { label: "Home", href: "#hero" },
     { label: "Sectors", href: "#sectors" },
     { label: "Products", href: "#products" },

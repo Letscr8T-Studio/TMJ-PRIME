@@ -36,7 +36,10 @@ export interface ResellerContent {
 export interface BusinessInfo {
   name: string;
   slogan: string;
-  description: string;
+  shortDescription: string;
+  metaTitle?: string;
+  companyNumber?: string;
+  vatNumber?: string;
 }
 
 export interface ContactInfo {
@@ -47,14 +50,17 @@ export interface ContactInfo {
   email: string;
   phones: string[];
   country: string;
+  address?: string;
+  hours?: string;
 }
 
 export interface SiteConfig {
   business: BusinessInfo;
   contact: ContactInfo;
-  navLinks: NavLink[];
+  nav: NavLink[];
   sectors: Sector[];
   valueProps: ValueProp[];
   hero: HeroContent;
   reseller: ResellerContent;
+  accreditations: string[];
 }
