@@ -31,18 +31,56 @@ export const siteConfig: SiteConfig = {
       title: "Care Homes",
       blurb:
         "Dependable hygiene essentials that keep residents comfortable and facilities running to standard.",
+      icon: "heart-handshake",
+      href: "#contact",
     },
     {
       id: "hotels",
       title: "Hotels",
       blurb:
         "Guest toiletries and housekeeping supplies that reflect the standard your guests expect.",
+      icon: "bed",
+      href: "#contact",
     },
     {
       id: "commercial",
       title: "Commercial",
       blurb:
         "Bulk hygiene and washroom supplies for offices, facilities, and trade clients.",
+      icon: "building",
+      href: "#contact",
+    },
+  ],
+  products: [
+    {
+      id: "toiletries",
+      title: "Toiletries & Personal Care",
+      blurb: "Soap, shampoo, and personal care essentials for guests and residents.",
+    },
+    {
+      id: "paper-tissue",
+      title: "Paper & Tissue Products",
+      blurb: "Toilet rolls, hand towels, and tissues for washrooms and back-of-house.",
+    },
+    {
+      id: "cleaning-chemicals",
+      title: "Cleaning & Washroom Chemicals",
+      blurb: "Everyday cleaning, disinfecting, and washroom chemical supplies.",
+    },
+    {
+      id: "hand-hygiene",
+      title: "Hand Hygiene & Sanitisation",
+      blurb: "Hand soap, sanitiser, and hygiene stations for high-traffic areas.",
+    },
+    {
+      id: "ppe-disposables",
+      title: "PPE & Disposables",
+      blurb: "Gloves, aprons, and disposable essentials for staff and housekeeping.",
+    },
+    {
+      id: "dispensers-equipment",
+      title: "Dispensers & Equipment",
+      blurb: "Dispensers and washroom equipment to keep facilities running smoothly.",
     },
   ],
   valueProps: [
@@ -68,14 +106,29 @@ export const siteConfig: SiteConfig = {
   hero: {
     eyebrow: "UK-based hygiene & toiletry supplier",
     headline: "Hygiene and toiletry supplies your business can count on",
+    headlineHighlight: "count on",
     subheadline:
       "TMJprime supplies care homes, hotels, and commercial clients across the UK with quality hygiene and toiletry products — dependable stock, competitive trade pricing, and reliable delivery.",
     primaryCta: { label: "Open a trade account", href: "#contact" },
     secondaryCta: { label: "Request a quote", href: "#contact" },
+    highlights: [
+      "UK-based supplier",
+      "Care homes · Hotels · Commercial",
+      "Trade & reseller accounts",
+      "Reliable UK delivery",
+    ],
   },
   reseller: {
     headline: "Become a TMJprime reseller",
     body: "Partner with us and access our full range of hygiene and toiletry products at trade prices, backed by reliable UK supply.",
     cta: { label: "Set up a reseller account", href: "#contact" },
+  },
+  copy: {
+    sectors: {
+      eyebrow: "Who we supply",
+      title: "Hygiene supplies built around your sector",
+      intro:
+        "Care homes, hotels, and commercial facilities each have different priorities. We stock the right range for all three — and understand what each one demands.",
+    },
   },
 };

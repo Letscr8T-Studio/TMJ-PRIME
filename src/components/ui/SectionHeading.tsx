@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Eyebrow } from "./Eyebrow";
 
 interface SectionHeadingProps {
   eyebrow?: string;
@@ -24,14 +25,9 @@ export function SectionHeading({
   return (
     <div className={cn(isCenter && "text-center")}>
       {eyebrow ? (
-        <span
-          className={cn(
-            "inline-flex items-center rounded-full bg-brand-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink",
-            isCenter && "mx-auto"
-          )}
-        >
+        <Eyebrow onDark={onDark} className={cn(isCenter && "mx-auto")}>
           {eyebrow}
-        </span>
+        </Eyebrow>
       ) : null}
       <Heading
         id={id}

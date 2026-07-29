@@ -1,9 +1,19 @@
+import type { IconName } from "@/lib/icons";
+
 export interface NavLink {
   label: string;
   href: string;
 }
 
 export interface Sector {
+  id: string;
+  title: string;
+  blurb: string;
+  icon: IconName;
+  href?: string;
+}
+
+export interface ProductCategory {
   id: string;
   title: string;
   blurb: string;
@@ -22,15 +32,27 @@ export interface Cta {
 export interface HeroContent {
   eyebrow: string;
   headline: string;
+  headlineHighlight: string;
   subheadline: string;
   primaryCta: Cta;
   secondaryCta: Cta;
+  highlights: string[];
 }
 
 export interface ResellerContent {
   headline: string;
   body: string;
   cta: Cta;
+}
+
+export interface SectionCopy {
+  eyebrow: string;
+  title: string;
+  intro: string;
+}
+
+export interface CopyConfig {
+  sectors: SectionCopy;
 }
 
 export interface BusinessInfo {
@@ -59,8 +81,10 @@ export interface SiteConfig {
   contact: ContactInfo;
   nav: NavLink[];
   sectors: Sector[];
+  products: ProductCategory[];
   valueProps: ValueProp[];
   hero: HeroContent;
   reseller: ResellerContent;
   accreditations: string[];
+  copy: CopyConfig;
 }
