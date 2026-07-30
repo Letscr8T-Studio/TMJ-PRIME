@@ -51,8 +51,8 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         aria-modal="true"
         aria-label="Menu"
         id="mobile-nav"
-        className={`absolute right-0 top-0 flex h-full w-[86%] max-w-sm flex-col gap-8 bg-surface p-6 shadow-xl transition-transform duration-300 ease-out ${
-          open ? "translate-x-0" : "translate-x-full"
+        className={`absolute top-0 flex h-full w-[86%] max-w-sm flex-col gap-8 bg-surface p-6 shadow-xl transition-[right] duration-300 ease-out ${
+          open ? "right-0" : "-right-full"
         }`}
       >
         <div className="flex items-center justify-end">
