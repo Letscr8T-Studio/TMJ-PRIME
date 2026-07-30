@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/ui/Icon";
 import { siteConfig } from "@/config/site";
 
@@ -46,6 +47,18 @@ export function ContactInfo() {
           </li>
         ) : null}
       </ul>
+
+      {copy.contact.image ? (
+        <div className="relative mt-8 aspect-4/3 w-full overflow-hidden rounded-xl bg-brand-100">
+          <Image
+            src={copy.contact.image}
+            alt={copy.contact.imageAlt ?? ""}
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 560px, 100vw"
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

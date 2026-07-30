@@ -26,6 +26,8 @@ export const copy: CopyConfig = {
     intro:
       "Tell us about your site and what you need to keep stocked. We'll get back to you with trade pricing and availability — usually within one working day.",
     infoHeading: "Prefer to talk?",
+    image: "/images/contact.jpg",
+    imageAlt: "TMJprime hygiene and toiletry supplies ready for dispatch",
   },
   contactPage: {
     metaTitle: "Contact",
