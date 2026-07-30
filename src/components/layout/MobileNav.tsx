@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
+import { NavLink } from "./NavLink";
 
 interface MobileNavProps {
   open: boolean;
@@ -30,16 +31,19 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     };
   }, [open, onClose]);
 
-  if (!open) return null;
-
   return (
-    <div className="fixed inset-0 z-50 md:hidden">
+    <div
+      inert={!open}
+      className={`fixed inset-0 z-50 overflow-hidden transition-opacity duration-300 md:hidden ${
+        open ? "opacity-100" : "pointer-events-none opacity-0"
+      }`}
+    >
       <button
         type="button"
         aria-hidden="true"
         tabIndex={-1}
         onClick={onClose}
-        className="absolute inset-0 bg-ink/50"
+        className="absolute inset-0 bg-ink/50 transition-opacity duration-300"
       />
 
       <div
@@ -47,7 +51,9 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         aria-modal="true"
         aria-label="Menu"
         id="mobile-nav"
-        className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col gap-8 bg-surface p-6 shadow-xl"
+        className={`absolute right-0 top-0 flex h-full w-[86%] max-w-sm flex-col gap-8 bg-surface p-6 shadow-xl transition-transform duration-300 ease-out ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex items-center justify-end">
           <button
@@ -72,22 +78,30 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           </button>
         </div>
 
-        <nav aria-label="Mobile" className="flex flex-col gap-6">
+        <nav aria-label="Mobile" className="flex flex-col gap-2">
           {siteConfig.nav.map((link) => (
-            <a
+            <NavLink
               key={link.href}
               href={link.href}
-              onClick={onClose}
-              className="rounded-sm text-lg font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2"
+              onNavigate={onClose}
+              className="block rounded-sm py-3 text-lg font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2"
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
-        <Button href={siteConfig.hero.primaryCta.href} variant="primary" size="md">
-          {siteConfig.hero.primaryCta.label}
-        </Button>
+        <div className="mt-auto border-t border-black/10 pt-6">
+          <Button
+            href={siteConfig.hero.primaryCta.href}
+            variant="primary"
+            size="lg"
+            onClick={onClose}
+            className="w-full"
+          >
+            {siteConfig.hero.primaryCta.label}
+          </Button>
+        </div>
       </div>
     </div>
   );

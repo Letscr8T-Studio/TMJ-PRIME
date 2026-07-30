@@ -7,7 +7,10 @@ export function HeroShowcase() {
     <div aria-hidden="true" className="relative">
       <div className="absolute -top-8 -right-8 -z-10 h-40 w-40 rounded-full bg-brand-400/40 blur-3xl" />
 
-      {/* Decorative showcase — can be replaced with a real product/brand photo later (public/images/hero.*) */}
+      {/* Decorative showcase — can be replaced with a real product/brand photo later
+          (public/images/hero.*). If replaced, use next/image with `priority`, explicit
+          width/height, and `sizes` to protect LCP/CLS — this text-only hero H1 is
+          currently the LCP element, which is ideal. */}
       <div className="rounded-2xl border border-black/10 bg-brand-50 p-6 md:p-8">
         <div className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-brand-500" />

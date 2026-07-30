@@ -20,4 +20,16 @@ export const copy: CopyConfig = {
     intro:
       "You can't run a clean, compliant site on unreliable supply. We make sure the essentials are always there — at the right price, backed by people who know your sector.",
   },
+  contact: {
+    eyebrow: "Get in touch",
+    title: "Open an account or request a quote",
+    intro:
+      "Tell us about your site and what you need to keep stocked. We'll get back to you with trade pricing and availability — usually within one working day.",
+    infoHeading: "Prefer to talk?",
+  },
+  contactPage: {
+    metaTitle: "Contact",
+    metaDescription:
+      "Get in touch with TMJprime to open a trade account, request a quote, or set up a reseller account. UK-based hygiene & toiletry supplier.",
+  },
 };

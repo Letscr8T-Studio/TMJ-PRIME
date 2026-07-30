@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/config/site";
+import { BRAND_COLORS } from "@/lib/brand-colors";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,11 +17,50 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const { business, seo } = siteConfig;
+const titleDefault = business.metaTitle ?? `${business.name} — ${business.slogan}`;
+
 export const metadata: Metadata = {
-  title:
-    siteConfig.business.metaTitle ??
-    `${siteConfig.business.name} — ${siteConfig.business.slogan}`,
-  description: siteConfig.business.shortDescription,
+  metadataBase: new URL(seo.url),
+  title: { default: titleDefault, template: `%s | ${business.name}` },
+  description: business.shortDescription,
+  applicationName: business.name,
+  keywords: [
+    "hygiene supplies",
+    "toiletry supplies",
+    "janitorial supplies UK",
+    "care home cleaning supplies",
+    "hotel toiletries",
+    "commercial cleaning supplies",
+    "reseller",
+    "trade account",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: business.name,
+    locale: seo.locale,
+    url: seo.url,
+    title: titleDefault,
+    description: business.shortDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: titleDefault,
+    description: business.shortDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  // Ink chrome reads as premium; swap to brand (#FFC400) if the client prefers a bolder tab colour.
+  themeColor: BRAND_COLORS.ink,
 };
 
 export default function RootLayout({
@@ -29,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
@@ -44,6 +85,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <JsonLd />
       </body>
     </html>
   );

@@ -15,6 +15,11 @@ import {
   Users,
   Handshake,
   ArrowRight,
+  Loader2,
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
   type LucideIcon,
 } from "lucide-react";
 
@@ -36,6 +41,11 @@ export const iconMap = {
   users: Users,
   handshake: Handshake,
   "arrow-right": ArrowRight,
+  loader: Loader2,
+  mail: Mail,
+  phone: Phone,
+  pin: MapPin,
+  clock: Clock,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconMap;

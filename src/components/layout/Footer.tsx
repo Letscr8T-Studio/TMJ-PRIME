@@ -42,7 +42,7 @@ export function Footer() {
             heading="Sectors"
             links={sectors.map((sector) => ({
               label: sector.title,
-              href: `#${sector.id}`,
+              href: `/#${sector.id}`,
             }))}
           />
           <ContactColumn contact={contact} />

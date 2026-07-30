@@ -7,7 +7,7 @@ export const sectors: Sector[] = [
     blurb:
       "Dependable hygiene essentials that keep residents comfortable and facilities running to standard.",
     icon: "heart-handshake",
-    href: "#contact",
+    href: "/contact",
   },
   {
     id: "hotels",
@@ -15,13 +15,13 @@ export const sectors: Sector[] = [
     blurb:
       "Guest toiletries and housekeeping supplies that reflect the standard your guests expect.",
     icon: "bed",
-    href: "#contact",
+    href: "/contact",
   },
   {
     id: "commercial",
     title: "Commercial",
     blurb: "Bulk hygiene and washroom supplies for offices, facilities, and trade clients.",
     icon: "building",
-    href: "#contact",
+    href: "/contact",
   },
 ];

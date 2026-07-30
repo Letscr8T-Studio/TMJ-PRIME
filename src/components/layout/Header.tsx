@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/config/site";
 import { MobileNav } from "./MobileNav";
+import { NavLink } from "./NavLink";
 
 const navLinkClasses =
   "rounded-sm text-sm font-medium text-ink transition-colors hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2";
@@ -27,9 +28,9 @@ export function Header() {
 
           <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
             {siteConfig.nav.map((link) => (
-              <a key={link.href} href={link.href} className={navLinkClasses}>
+              <NavLink key={link.href} href={link.href} className={navLinkClasses}>
                 {link.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
 

@@ -4,6 +4,8 @@ import { sectors } from "./data/sectors";
 import { products } from "./data/products";
 import { valueProps } from "./data/valueProps";
 import { copy } from "./data/copy";
+import { contactForm } from "./data/contact";
+import { seo } from "./data/seo";
 
 export const siteConfig: SiteConfig = {
   business: {
@@ -32,8 +34,8 @@ export const siteConfig: SiteConfig = {
     headlineHighlight: "count on",
     subheadline:
       "TMJprime supplies care homes, hotels, and commercial clients across the UK with quality hygiene and toiletry products — dependable stock, competitive trade pricing, and reliable delivery.",
-    primaryCta: { label: "Open a trade account", href: "#contact" },
-    secondaryCta: { label: "Request a quote", href: "#contact" },
+    primaryCta: { label: "Open a trade account", href: "/contact" },
+    secondaryCta: { label: "Request a quote", href: "/contact" },
     highlights: [
       "UK-based supplier",
       "Care homes · Hotels · Commercial",
@@ -50,7 +52,9 @@ export const siteConfig: SiteConfig = {
       "Dedicated account support",
       "Flexible ordering with reliable UK delivery",
     ],
-    cta: { label: "Set up a reseller account", href: "#contact" },
+    cta: { label: "Set up a reseller account", href: "/contact" },
   },
   copy,
+  contactForm,
+  seo,
 };

@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -50,6 +51,20 @@ function variantClasses(variant: ButtonVariant, onDark: boolean): string {
   );
 }
 
+function buttonClasses(
+  variant: ButtonVariant,
+  size: ButtonSize,
+  onDark: boolean,
+  className?: string
+): string {
+  return cn(
+    "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+    sizeClasses[size],
+    variantClasses(variant, onDark),
+    className
+  );
+}
+
 export function Button({
   variant = "primary",
   size = "md",
@@ -58,16 +73,21 @@ export function Button({
   children,
   ...rest
 }: ButtonProps) {
-  const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
-    sizeClasses[size],
-    variantClasses(variant, onDark),
-    className
-  );
+  const classes = buttonClasses(variant, size, onDark, className);
 
   if (typeof rest.href === "string") {
+    const { href, ...anchorRest } = rest;
+
+    if (href.startsWith("/")) {
+      return (
+        <Link href={href} className={classes} {...anchorRest}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
-      <a className={classes} {...rest}>
+      <a href={href} className={classes} {...anchorRest}>
         {children}
       </a>
     );

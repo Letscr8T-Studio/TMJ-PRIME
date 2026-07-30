@@ -30,7 +30,7 @@ export function Section({
     <section
       id={id}
       aria-labelledby={ariaLabelledBy}
-      className={cn("py-16 md:py-24", variantClasses[variant], className)}
+      className={cn("scroll-mt-20 py-16 md:py-24", variantClasses[variant], className)}
     >
       <Container>{children}</Container>
     </section>

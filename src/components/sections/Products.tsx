@@ -33,7 +33,7 @@ export function Products() {
 
       <p className="mt-10 text-center text-sm text-muted">
         {copy.products.footnote}
-        <Button variant="ghost" size="sm" href="#contact">
+        <Button variant="ghost" size="sm" href="/contact">
           Ask about a product
         </Button>
       </p>
