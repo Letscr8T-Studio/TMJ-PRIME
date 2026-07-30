@@ -36,9 +36,15 @@ export interface ContactInfo {
   hours?: string;
 }
 
+export interface Agency {
+  name: string;
+  url: string;
+}
+
 export interface SiteConfig {
   business: BusinessInfo;
   contact: ContactInfo;
+  agency: Agency;
   nav: NavLink[];
   sectors: Sector[];
   products: ProductCategory[];

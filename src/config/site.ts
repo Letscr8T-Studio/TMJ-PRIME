@@ -23,6 +23,7 @@ export const siteConfig: SiteConfig = {
     phones: ["+44 7769 375625", "+44 7769 375623"],
     country: "United Kingdom",
   },
+  agency: { name: "LetsCr8T", url: "https://letscr8t.vercel.app/" },
   accreditations: [],
   nav,
   sectors,
