@@ -32,6 +32,6 @@ export const copy: CopyConfig = {
   contactPage: {
     metaTitle: "Contact",
     metaDescription:
-      "Get in touch with TMJprime to open a trade account, request a quote, or set up a reseller account. UK-based hygiene & toiletry supplier.",
+      "Get in touch with TMJprime to open a trade account, request a quote, or become a partner. UK-based hygiene & toiletry supplier.",
   },
 };

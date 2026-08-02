@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "care home cleaning supplies",
     "hotel toiletries",
     "commercial cleaning supplies",
-    "reseller",
+    "trade and partnership accounts",
     "trade account",
   ],
   alternates: { canonical: "/" },

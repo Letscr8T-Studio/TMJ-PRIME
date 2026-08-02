@@ -13,9 +13,9 @@ export const contactForm: ContactFormConfig = {
   },
   sectorOptions: [...sectors.map((sector) => sector.title), "Other"],
   enquiryOptions: [
-    "Open a trade account",
+    "Trade / business account",
     "Request a quote",
-    "Reseller enquiry",
+    "Partnership enquiry",
     "General enquiry",
   ],
   requiredNote: "Fields marked * are required.",

@@ -93,13 +93,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
 
         <div className="mt-auto border-t border-black/10 pt-6">
           <Button
-            href={siteConfig.hero.primaryCta.href}
+            href={siteConfig.headerCta.href}
             variant="primary"
             size="lg"
             onClick={onClose}
             className="w-full"
           >
-            {siteConfig.hero.primaryCta.label}
+            {siteConfig.headerCta.label}
           </Button>
         </div>
       </div>

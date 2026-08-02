@@ -35,8 +35,8 @@ export function Header() {
           </nav>
 
           <div className="hidden md:block">
-            <Button href={siteConfig.hero.primaryCta.href} variant="primary" size="sm">
-              {siteConfig.hero.primaryCta.label}
+            <Button href={siteConfig.headerCta.href} variant="primary" size="sm">
+              {siteConfig.headerCta.label}
             </Button>
           </div>
 

@@ -6,6 +6,7 @@ import type {
   HeroContent,
   ResellerContent,
   CopyConfig,
+  Cta,
 } from "./content";
 import type { ContactFormConfig } from "./forms";
 
@@ -46,6 +47,7 @@ export interface SiteConfig {
   contact: ContactInfo;
   agency: Agency;
   nav: NavLink[];
+  headerCta: Cta;
   sectors: Sector[];
   products: ProductCategory[];
   valueProps: ValueProp[];

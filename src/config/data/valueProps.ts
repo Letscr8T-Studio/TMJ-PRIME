@@ -13,7 +13,7 @@ export const valueProps: ValueProp[] = [
   },
   {
     title: "Competitive trade pricing",
-    blurb: "Volume-friendly pricing built for resellers and businesses buying at scale.",
+    blurb: "Volume-friendly pricing built for partners and businesses buying at scale.",
     icon: "tag",
   },
   {
